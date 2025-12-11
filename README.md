@@ -55,4 +55,22 @@ This bucket stores uploaded waste images using pre-signed URLs.
 Keep Block Public Access = ON
 (Users upload using pre-signed URLs, no need for public access.)
 
+📝 Add CORS to Uploads Bucket
+
+Go to bucket → Permissions → CORS → Paste:
+
+[
+  {
+    "AllowedHeaders": ["*"],
+    "AllowedMethods": ["PUT", "GET"],
+    "AllowedOrigins": ["*"],
+    "ExposeHeaders": []
+  }
+]
+
+**📸 CORS Settings Screenshot**
+
+
+
+
 
