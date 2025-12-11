@@ -374,4 +374,105 @@ Attach these policies:
 
  **AmazonSESFullAccess**
 
-Your CreateReport Lambda is now ready.
+Your CreateReport Lambda is now ready. 
+
+# ⭐ Step 5 — Configure API Gateway (POST /upload-url & POST /reports)
+
+API Gateway connects your frontend to your Lambda functions.  
+Here you will create two endpoints:
+
+1️⃣ **POST /upload-url** → calls GenerateUploadUrl  
+2️⃣ **POST /reports** → calls CreateReport  
+
+---
+
+## 🟢 1️⃣ Create a New REST API
+Go to:
+AWS Console → API Gateway → Create API → REST API → Build
+
+Settings:
+API name: ClickCleanAPI  
+Endpoint type: Regional  
+
+Click **Create API**.
+
+---
+
+## 🟢 2️⃣ Create Resource: /upload-url
+Go to:
+Actions → Create Resource
+
+Resource name: upload-url  
+Resource path: /upload-url  
+
+Enable CORS: **YES**
+
+Click **Create Resource**.
+
+---
+
+## 🟢 3️⃣ Add POST Method to /upload-url
+Select **/upload-url** → Actions → Create Method → POST
+
+Choose:
+Integration type: Lambda  
+Lambda Function: GenerateUploadUrl  
+Lambda proxy integration: **ON**
+
+Save → Allow.
+
+---
+
+## 🟢 4️⃣ Enable CORS for /upload-url (Important)
+Select /upload-url → Actions → Enable CORS  
+
+Settings:
+- Allowed Methods: OPTIONS, POST  
+- Allowed Headers: Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token  
+- Allowed Origin: *  
+
+Click **Save**.
+
+---
+
+## 🟢 5️⃣ Create Resource: /reports
+Go to:
+Actions → Create Resource
+
+Resource name: reports  
+Resource path: /reports  
+
+Enable CORS: **YES**
+
+Click **Create Resource**.
+
+---
+
+## 🟢 6️⃣ Add POST Method to /reports
+Select **/reports** → Actions → Create Method → POST
+
+Integration type: Lambda  
+Lambda Function: CreateReport  
+Lambda proxy integration: **ON**
+
+Save → Allow.
+
+---
+
+
+## 🟢 Deploy the API
+Go to:
+Actions → Deploy API
+
+Choose:
+Stage name: **prod**  
+
+Click **Deploy**.
+
+You will now get your backend endpoint:
+
+Use this URL in your frontend(edit in app.js code):
+
+```
+const API_BASE_URL = "https://YOUR_API_ID.execute-api.ap-south-1.amazonaws.com/prod";
+```
