@@ -361,7 +361,7 @@ Report ID: {report_id}
 ```
 Click **Deploy**.
 
-🟢 4️⃣ Add Permissions to Lambda Role
+# 🟢 4️⃣ Add Permissions to Lambda Role
 
 Go to:
 ```
@@ -370,8 +370,8 @@ Configuration → Permissions → Role name
 
 Attach these policies:
 
-AmazonDynamoDBFullAccess
+ **AmazonDynamoDBFullAccess**
 
-AmazonSESFullAccess
+ **AmazonSESFullAccess**
 
 Your CreateReport Lambda is now ready.
