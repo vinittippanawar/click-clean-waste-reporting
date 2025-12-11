@@ -52,12 +52,12 @@ This bucket stores uploaded waste images using pre-signed URLs.
 
 **Bucket name :click-and-clean-uploads**
 
-Keep Block Public Access = ON
+ Keep Block Public Access = ON
 (Users upload using pre-signed URLs, no need for public access.)
 
 📝 Add CORS to Uploads Bucket
 
-Go to bucket → Permissions → CORS → Paste:
+**Go to bucket → Permissions → CORS → Paste:**
 ```
 [
   {
@@ -71,6 +71,65 @@ Go to bucket → Permissions → CORS → Paste:
 **📸 CORS Settings Screenshot**
 
 
+# ⭐ Step 3 — Create DynamoDB Table (WasteReports)
+
+Your application needs one DynamoDB table to store all submitted waste reports.
+
+Follow these steps:
+
+# 1️⃣ Create DynamoDB Table
+- Go to **AWS Console → DynamoDB → Create Table**
+- Use the following settings:
+Table name: WasteReports
+Partition key: reportId (String)
+
+# 2️⃣ Table Structure
+
+Each report stored will automatically contain:
+
+reportId (UUID)
+
+city
+
+area
+
+description
+
+wasteType
+
+urgency
+
+photoKey (S3 path)
+
+timestamp
+
+status (Default: "Pending")
+
+**EXAMPLE ITEM**
+```
+{
+  "reportId": "1234-5678-9999",
+  "city": "Pune",
+  "area": "Shivajinagar",
+  "description": "Garbage collected near footpath",
+  "wasteType": "Garbage",
+  "urgency": "Medium",
+  "photoKey": "reports/garbage.jpg",
+  "timestamp": 1733840000,
+  "status": "Pending"
+}
+```
+# 3️⃣ No Indexes Needed
+
+This project only requires the primary key.
+
+No secondary indexes or sort keys are needed for basic reporting.
 
 
+# 4️⃣ Verify Table is Created
 
+Go to: 
+```
+DynamoDB → Tables → WasteReports → Explore Table Items
+```
+You will see entries appear after each successful report submission
