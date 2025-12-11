@@ -80,7 +80,9 @@ Follow these steps:
 # 1️⃣ Create DynamoDB Table
 - Go to **AWS Console → DynamoDB → Create Table**
 - Use the following settings:
+  
 Table name: WasteReports
+
 Partition key: reportId (String)
 
 # 2️⃣ Table Structure
