@@ -359,4 +359,19 @@ Report ID: {report_id}
         "body": json.dumps({"reportId": report_id})
     }
 ```
-Click **Deploy**
+Click **Deploy**.
+
+🟢 4️⃣ Add Permissions to Lambda Role
+
+Go to:
+```
+Configuration → Permissions → Role name
+```
+
+Attach these policies:
+
+AmazonDynamoDBFullAccess
+
+AmazonSESFullAccess
+
+Your CreateReport Lambda is now ready.
