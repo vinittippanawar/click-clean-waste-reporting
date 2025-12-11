@@ -460,7 +460,7 @@ Save → Allow.
 ---
 
 
-## 🟢 Deploy the API
+## 🟢 7️⃣ Deploy the API
 Go to:
 Actions → Deploy API
 
