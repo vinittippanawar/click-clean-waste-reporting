@@ -256,8 +256,9 @@ Permissions: Create new role with basic Lambda permissions
 
 ## 🟢 2️⃣ Add Environment Variables
 Go to:
+```
 Configuration → Environment variables → Edit
-
+``` 
 Add these three:
 
 | Key          | Value                       |
@@ -357,3 +358,4 @@ Report ID: {report_id}
         "headers": cors_headers,
         "body": json.dumps({"reportId": report_id})
     }
+Click Deploy.
