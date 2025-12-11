@@ -58,7 +58,7 @@ Keep Block Public Access = ON
 📝 Add CORS to Uploads Bucket
 
 Go to bucket → Permissions → CORS → Paste:
-
+```
 [
   {
     "AllowedHeaders": ["*"],
@@ -67,7 +67,7 @@ Go to bucket → Permissions → CORS → Paste:
     "ExposeHeaders": []
   }
 ]
-
+```
 **📸 CORS Settings Screenshot**
 
 
