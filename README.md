@@ -477,3 +477,98 @@ Use this URL in your frontend (edit in app.js code):
 ```
 const API_BASE_URL = "https://YOUR_API_ID.execute-api.ap-south-1.amazonaws.com/prod";
 ```
+
+# ⭐ Step 7 — Host Frontend on S3 (Static Website Hosting)
+
+Your frontend bucket was already created in Step 1:
+
+Bucket name: click-clean-frontend
+
+
+Now we enable static website hosting and upload the frontend files.
+
+---
+
+## 🟢 1️⃣ Enable Static Website Hosting
+
+Go to:
+AWS Console → S3 → click-clean-frontend → Properties
+
+Scroll to:
+
+Static website hosting → Edit
+
+
+Enable it.
+
+Set:
+
+Index document: index.html
+Error document: index.html
+
+
+Save.
+
+You will now get a public website URL like:
+
+http://click-clean-frontend.s3-website.ap-south-1.amazonaws.com 
+
+
+---
+
+## 🟢 2️⃣ Add Public Read Policy
+
+Go to:
+
+Permissions → Bucket Policy → Edit
+
+
+Paste this:
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::click-clean-frontend/*"
+    }
+  ]
+}
+```
+Save. 
+
+🟢 3️⃣ Upload Frontend Files
+
+Go to:
+
+click-clean-frontend → Objects → Upload
+
+Upload:
+
+index.html
+
+styles.css
+
+app.js
+
+Click Upload.
+
+🟢 4️⃣ Test Your Live Website
+
+Open:
+
+http://click-clean-frontend.s3-website.ap-south-1.amazonaws.com
+
+Test the full workflow:
+
+✔ Select an image → uploads to S3
+✔ Submit report → DynamoDB receives data
+✔ Admin email arrives
+✔ User confirmation email arrives
+✔ Status shown as “pending” (default)
+
+Your frontend is now LIVE and fully connected to backend APIs.
+
