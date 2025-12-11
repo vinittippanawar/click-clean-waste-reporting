@@ -471,7 +471,7 @@ Click **Deploy**.
 
 You will now get your backend endpoint:
 
-Use this URL in your frontend(edit in app.js code):
+Use this URL in your frontend (edit in app.js code):
 
 ```
 const API_BASE_URL = "https://YOUR_API_ID.execute-api.ap-south-1.amazonaws.com/prod";
