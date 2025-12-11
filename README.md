@@ -358,4 +358,5 @@ Report ID: {report_id}
         "headers": cors_headers,
         "body": json.dumps({"reportId": report_id})
     }
-Click Deploy.
+```
+Click **Deploy**
