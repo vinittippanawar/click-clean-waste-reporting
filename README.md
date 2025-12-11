@@ -31,7 +31,7 @@ DynamoDB (WasteReports table)
 SES (Admin + User Emails)
 ```
 
-# ⭐ Step 2 — Create S3 Buckets (Frontend + File Uploads)
+# ⭐ Step 1 — Create S3 Buckets (Frontend + File Uploads)
 
 You need **two S3 buckets** for this project:
 
@@ -71,7 +71,7 @@ This bucket stores uploaded waste images using pre-signed URLs.
 **📸 CORS Settings Screenshot**
 
 
-# ⭐ Step 3 — Create DynamoDB Table (WasteReports)
+# ⭐ Step 2 — Create DynamoDB Table (WasteReports)
 
 Your application needs one DynamoDB table to store all submitted waste reports.
 
@@ -135,3 +135,103 @@ Go to:
 DynamoDB → Tables → WasteReports → Explore Table Items
 ```
 You will see entries appear after each successful report submission
+
+# ⭐ Step 3 — Create Lambda Function: GenerateUploadUrl (S3 Pre-Signed Uploads)
+
+  This Lambda function generates a secure pre-signed URL so the user can upload photos directly to S3 without exposing your AWS keys.
+
+ # 🟢 1️⃣ Create Lambda Function
+
+ Go to:
+```
+ AWS → Lambda → Create function
+```
+Choose:
+```
+Function name: GenerateUploadUrl
+Runtime: Python 3.11
+Architecture: x86_64
+Permissions: Create new role with basic Lambda permissions
+```
+# 🟢 2️⃣ Add Environment Variable
+
+Go to:
+```
+Configuration → Environment variables → Edit
+```
+Add:
+
+| Key           | Value                   |
+| ------------- | ----------------------- |
+| UPLOAD_BUCKET | click-and-clean-uploads |
+
+Save.
+
+# 🟢 3️⃣ Paste Lambda Code
+
+Replace existing code with:
+```
+import json
+import boto3
+import os
+from botocore.exceptions import ClientError
+
+S3_BUCKET = os.environ["UPLOAD_BUCKET"]
+s3_client = boto3.client("s3")
+
+def lambda_handler(event, context):
+    body = json.loads(event.get("body") or "{}")
+
+    file_name = body.get("fileName")
+    content_type = body.get("contentType")
+
+    if not file_name or not content_type:
+        return {
+            "statusCode": 400,
+            "headers": {"Access-Control-Allow-Origin": "*"},
+            "body": json.dumps({"error": "Missing fileName or contentType"})
+        }
+
+    file_key = f"reports/{file_name}"
+
+    try:
+        upload_url = s3_client.generate_presigned_url(
+            "put_object",
+            Params={
+                "Bucket": S3_BUCKET,
+                "Key": file_key,
+                "ContentType": content_type
+            },
+            ExpiresIn=3600
+        )
+
+        return {
+            "statusCode": 200,
+            "headers": {"Access-Control-Allow-Origin": "*"},
+            "body": json.dumps({"uploadUrl": upload_url, "fileKey": file_key})
+        }
+
+    except ClientError as e:
+        return {
+            "statusCode": 500,
+            "headers": {"Access-Control-Allow-Origin": "*"},
+            "body": json.dumps({"error": str(e)})
+        }
+```
+
+Click Deploy.
+
+# 🟢 4️⃣ Add S3 Permissions to Lambda Role
+
+Go to:
+ ```
+   Configuration → Permissions → Role name 
+ ```
+Then: 
+```
+ Add permissions → Attach policies
+```
+Attach:
+```
+AmazonS3FullAccess
+```
