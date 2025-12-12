@@ -138,7 +138,7 @@ You will see entries appear after each successful report submission
 
 # ⭐ Step 3 — Create Lambda Function: GenerateUploadUrl (S3 Pre-Signed Uploads)
 
-  This Lambda function generates a secure pre-signed URL so the user can upload photos directly to S3 without exposing your AWS keys.
+ - This Lambda function generates a secure pre-signed URL so the user can upload photos directly to S3 without exposing your AWS keys.
 
  # 🟢 1️⃣ Create Lambda Function
 
@@ -148,10 +148,10 @@ You will see entries appear after each successful report submission
 ```
 Choose:
 ```
-Function name: GenerateUploadUrl
-Runtime: Python 3.11
-Architecture: x86_64
-Permissions: Create new role with basic Lambda permissions
+- Function name: GenerateUploadUrl
+- Runtime: Python 3.11
+- Architecture: x86_64
+- Permissions: Create new role with basic Lambda permissions
 ```
 # 🟢 2️⃣ Add Environment Variable
 
@@ -247,10 +247,10 @@ AWS Console → Lambda → Create Function
 
 Use:
 
-Function name: CreateReport  
-Runtime: Python 3.11  
-Architecture: x86_64  
-Permissions: Create new role with basic Lambda permissions  
+- Function name: CreateReport  
+- Runtime: Python 3.11  
+- Architecture: x86_64  
+- Permissions: Create new role with basic Lambda permissions  
 
 ---
 
@@ -391,8 +391,8 @@ Go to:
 AWS Console → API Gateway → Create API → REST API → Build
 
 Settings:
-API name: ClickCleanAPI  
-Endpoint type: Regional  
+API name: **ClickCleanAPI**  
+Endpoint type:**Regional** 
 
 Click **Create API**.
 
@@ -402,8 +402,8 @@ Click **Create API**.
 Go to:
 Actions → Create Resource
 
-Resource name: upload-url  
-Resource path: /upload-url  
+Resource name: **upload-url**  
+Resource path: **/upload-url**  
 
 Enable CORS: **YES**
 
@@ -415,9 +415,9 @@ Click **Create Resource**.
 Select **/upload-url** → Actions → Create Method → POST
 
 Choose:
-Integration type: Lambda  
-Lambda Function: GenerateUploadUrl  
-Lambda proxy integration: **ON**
+- Integration type: Lambda  
+- Lambda Function: GenerateUploadUrl  
+- Lambda proxy integration: **ON**
 
 Save → Allow.
 
@@ -439,8 +439,8 @@ Click **Save**.
 Go to:
 Actions → Create Resource
 
-Resource name: reports  
-Resource path: /reports  
+Resource name: **reports**  
+Resource path: **/reports**  
 
 Enable CORS: **YES**
 
@@ -451,9 +451,9 @@ Click **Create Resource**.
 ## 🟢 6️⃣ Add POST Method to /reports
 Select **/reports** → Actions → Create Method → POST
 
-Integration type: Lambda  
-Lambda Function: CreateReport  
-Lambda proxy integration: **ON**
+- Integration type: Lambda  
+- Lambda Function: CreateReport  
+- Lambda proxy integration: **ON**
 
 Save → Allow.
 
@@ -462,16 +462,16 @@ Save → Allow.
 
 ## 🟢 7️⃣ Deploy the API
 Go to:
-Actions → Deploy API
+- Actions → Deploy API
 
 Choose:
-Stage name: **prod**  
+-  Stage name: **prod**  
 
-Click **Deploy**.
+- Click **Deploy**.
 
-You will now get your backend endpoint:
+- You will now get your backend endpoint:
 
-Use this URL in your frontend (edit in app.js code): 
+- Use this URL in your frontend (edit in app.js code): 
 
 ---
 ```
@@ -492,19 +492,19 @@ Now we enable static website hosting and upload the frontend files.
 ## 🟢 1️⃣ Enable Static Website Hosting
 
 Go to:
-AWS Console → S3 → click-clean-frontend → Properties
+- AWS Console → S3 → click-clean-frontend → Properties
 
 Scroll to:
 
-Static website hosting → Edit
+- Static website hosting → Edit
 
 
-Enable it.
+- Enable it.
 
 Set:
 ```
-Index document: index.html
-Error document: index.html
+- Index document: index.html
+- Error document: index.html
 ```
 
 Save.
@@ -544,17 +544,17 @@ Save.
 
 Go to:
 
-click-clean-frontend → Objects → Upload
+- click-clean-frontend → Objects → Upload
 
-Upload:
+- Upload:
 
-index.html
+- index.html
 
-styles.css
+- styles.css
 
-app.js
+- app.js
 
-Click Upload.
+- Click Upload.
 
 🟢 4️⃣ Test Your Live Website
 
