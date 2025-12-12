@@ -565,9 +565,13 @@ http://click-clean-frontend.s3-website.ap-south-1.amazonaws.com
 Test the full workflow:
 
 ✔ Select an image → uploads to S3
+
 ✔ Submit report → DynamoDB receives data
+
 ✔ Admin email arrives
+
 ✔ User confirmation email arrives
+
 ✔ Status shown as “pending” (default)
 
 Your frontend is now LIVE and fully connected to backend APIs.
