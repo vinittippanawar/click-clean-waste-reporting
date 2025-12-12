@@ -370,9 +370,9 @@ Configuration → Permissions → Role name
 
 Attach these policies:
 
- **AmazonDynamoDBFullAccess**
+ - **AmazonDynamoDBFullAccess**
 
- **AmazonSESFullAccess**
+-  **AmazonSESFullAccess**
 
 Your CreateReport Lambda is now ready. 
 
