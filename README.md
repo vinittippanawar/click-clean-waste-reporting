@@ -48,12 +48,13 @@ Enable:
 
 ## 🟢 2) S3 Bucket for Photo Uploads
 
-This bucket stores uploaded waste images using pre-signed URLs.
+- This bucket stores uploaded waste images using pre-signed URLs.
 
-**Bucket name :click-and-clean-uploads**
+- **Bucket name :click-and-clean-uploads**
 
- Keep Block Public Access = ON
-(Users upload using pre-signed URLs, no need for public access.)
+-  Keep Block Public Access = ON
+  
+-  (Users upload using pre-signed URLs, no need for public access.)
 
 📝 Add CORS to Uploads Bucket
 
