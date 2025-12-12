@@ -89,23 +89,23 @@ Partition key: reportId (String)
 
 Each report stored will automatically contain:
 
-reportId (UUID)
+- reportId (UUID)
 
-city
+- city
 
-area
+- area
 
-description
+- description
 
-wasteType
+- wasteType
 
-urgency
+- urgency
 
-photoKey (S3 path)
+- photoKey (S3 path)
 
-timestamp
+- timestamp
 
-status (Default: "Pending")
+- status (Default: "Pending")
 
 **EXAMPLE ITEM**
 ```
@@ -123,9 +123,9 @@ status (Default: "Pending")
 ```
 # 3️⃣ No Indexes Needed
 
-This project only requires the primary key.
+- This project only requires the primary key.
 
-No secondary indexes or sort keys are needed for basic reporting.
+- No secondary indexes or sort keys are needed for basic reporting.
 
 
 # 4️⃣ Verify Table is Created
