@@ -378,7 +378,8 @@ Your CreateReport Lambda is now ready.
 
 # ⭐ Step 5 — Configure API Gateway (POST /upload-url & POST /reports)
 
-API Gateway connects your frontend to your Lambda functions.  
+API Gateway connects your frontend to your Lambda functions. 
+
 Here you will create two endpoints:
 
 1️⃣ **POST /upload-url** → calls GenerateUploadUrl  
