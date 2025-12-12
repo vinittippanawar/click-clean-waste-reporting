@@ -490,12 +490,12 @@ const API_BASE_URL = "https://YOUR_API_ID.execute-api.ap-south-1.amazonaws.com/p
 
 # ⭐ Step 7 — Host Frontend on S3 (Static Website Hosting)
 
-Your frontend bucket was already created in Step 1:
+- Your frontend bucket was already created in Step 1:
 
-**Bucket name: click-clean-frontend**
+- **Bucket name: click-clean-frontend**
 
 
-Now we enable static website hosting and upload the frontend files.
+- Now we enable static website hosting and upload the frontend files.
 
 ---
 
