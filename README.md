@@ -38,9 +38,9 @@ You need **two S3 buckets** for this project:
 ---
 
 ## 🟢 1) S3 Bucket for Frontend Hosting  
-This bucket will store your HTML, CSS, JS files.
+- This bucket will store your HTML, CSS, JS files.
 
-**Bucket name : click-clean-frontend** 
+- **Bucket name : click-clean-frontend** 
 
 Enable:
 - **Static website hosting**
