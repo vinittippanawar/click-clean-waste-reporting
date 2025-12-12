@@ -81,9 +81,9 @@ Follow these steps:
 - Go to **AWS Console → DynamoDB → Create Table**
 - Use the following settings:
   
-Table name: WasteReports
+- Table name: WasteReports
 
-Partition key: reportId (String)
+- Partition key: reportId (String)
 
 # 2️⃣ Table Structure
 
@@ -391,8 +391,9 @@ Go to:
 AWS Console → API Gateway → Create API → REST API → Build
 
 Settings:
-API name: **ClickCleanAPI**  
-Endpoint type:**Regional** 
+- API name: **ClickCleanAPI**
+  
+- Endpoint type:**Regional** 
 
 Click **Create API**.
 
@@ -402,8 +403,9 @@ Click **Create API**.
 Go to:
 Actions → Create Resource
 
-Resource name: **upload-url**  
-Resource path: **/upload-url**  
+- Resource name: **upload-url**
+   
+- Resource path: **/upload-url**  
 
 Enable CORS: **YES**
 
@@ -415,8 +417,10 @@ Click **Create Resource**.
 Select **/upload-url** → Actions → Create Method → POST
 
 Choose:
-- Integration type: Lambda  
-- Lambda Function: GenerateUploadUrl  
+- Integration type: Lambda
+  
+- Lambda Function: GenerateUploadUrl
+  
 - Lambda proxy integration: **ON**
 
 Save → Allow.
@@ -427,8 +431,10 @@ Save → Allow.
 Select /upload-url → Actions → Enable CORS  
 
 Settings:
-- Allowed Methods: OPTIONS, POST  
-- Allowed Headers: Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token  
+- Allowed Methods: OPTIONS, POST
+  
+- Allowed Headers: Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token
+  
 - Allowed Origin: *  
 
 Click **Save**.
@@ -439,8 +445,9 @@ Click **Save**.
 Go to:
 Actions → Create Resource
 
-Resource name: **reports**  
-Resource path: **/reports**  
+- Resource name: **reports**
+  
+- Resource path: **/reports**  
 
 Enable CORS: **YES**
 
@@ -451,8 +458,10 @@ Click **Create Resource**.
 ## 🟢 6️⃣ Add POST Method to /reports
 Select **/reports** → Actions → Create Method → POST
 
-- Integration type: Lambda  
-- Lambda Function: CreateReport  
+- Integration type: Lambda
+  
+- Lambda Function: CreateReport
+    
 - Lambda proxy integration: **ON**
 
 Save → Allow.
@@ -504,6 +513,7 @@ Scroll to:
 Set:
 ```
 - Index document: index.html
+
 - Error document: index.html
 ```
 
@@ -574,5 +584,5 @@ Test the full workflow:
 
 ✔ Status shown as “pending” (default)
 
-Your frontend is now LIVE and fully connected to backend APIs.
+**Your frontend is now LIVE and fully connected to backend APIs.**
 
