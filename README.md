@@ -482,7 +482,7 @@ const API_BASE_URL = "https://YOUR_API_ID.execute-api.ap-south-1.amazonaws.com/p
 
 Your frontend bucket was already created in Step 1:
 
-Bucket name: click-clean-frontend
+**Bucket name: click-clean-frontend**
 
 
 Now we enable static website hosting and upload the frontend files.
@@ -502,17 +502,17 @@ Static website hosting → Edit
 Enable it.
 
 Set:
-
+```
 Index document: index.html
 Error document: index.html
-
+```
 
 Save.
 
 You will now get a public website URL like:
-
+```
 http://click-clean-frontend.s3-website.ap-south-1.amazonaws.com 
-
+```
 
 ---
 
@@ -559,9 +559,9 @@ Click Upload.
 🟢 4️⃣ Test Your Live Website
 
 Open:
-
+```
 http://click-clean-frontend.s3-website.ap-south-1.amazonaws.com
-
+```
 Test the full workflow:
 
 ✔ Select an image → uploads to S3
