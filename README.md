@@ -586,8 +586,8 @@ Open:
 
 - You should see the uploaded image file used during report submission.
 
-Example:
- **reports/garbage.jpg**
+  Example: **reports/garbage.jpg**
+ 
 
 - This confirms the pre-signed URL upload is working correctly.
 
