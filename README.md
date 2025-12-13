@@ -47,8 +47,7 @@ Enable:
 - **Public read access**
 
 **📸 S3 Frontend Screenshot**
-
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/46e9370c-8384-4abe-827f-e0514be295a2" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/1b7d4429-a8ff-4c2e-bfa2-68683847080d" />
 
 ## 🟢 2) S3 Bucket for Photo Uploads
 
