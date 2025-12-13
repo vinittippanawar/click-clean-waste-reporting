@@ -186,6 +186,11 @@ Add:
 
 Save.
 
+**📸 Environment Variable  Screenshot**
+
+<img width="1217" height="327" alt="Image" src="https://github.com/user-attachments/assets/bcd7d0e0-e4bf-4729-9c70-fd6944800e4f" />
+
+
 # 🟢 3️⃣ Paste Lambda Code
 
 Replace existing code with:
@@ -240,6 +245,11 @@ def lambda_handler(event, context):
 
 Click Deploy.
 
+
+**📸 lambda code for genrateuploadurl  Screenshot**
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/c94174a1-da31-451a-8c23-84286772c4b1" />
+
+
 # 🟢 4️⃣ Add S3 Permissions to Lambda Role
 
 Go to:
@@ -254,6 +264,10 @@ Attach:
 ```
 AmazonS3FullAccess
 ```
+
+**📸 lambda code for genrateuploadurl  Screenshot**
+
+
 # ⭐ Step 4 — Create Lambda Function: CreateReport (Store Report + Send Email)
 
 This Lambda function saves the user's waste report to DynamoDB and sends email notifications using Amazon SES.
