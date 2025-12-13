@@ -72,7 +72,12 @@ Enable:
   }
 ]
 ```
+**📸 s3 upload bucket creation Screenshot**
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/54257cd9-35a4-45d2-bbb2-5c4c427dedd4" />
+
+
 **📸 CORS Settings Screenshot**
+<img width="1920" height="950" alt="Image" src="https://github.com/user-attachments/assets/eef53146-15eb-4975-a05b-9bf7413791be" />
 
 
 # ⭐ Step 2 — Create DynamoDB Table (WasteReports)
@@ -140,6 +145,11 @@ DynamoDB → Tables → WasteReports → Explore Table Items
 ```
 You will see entries appear after each successful report submission
 
+**📸 DynamoDb table creation Screenshot**
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/1cf93e30-d7e9-4d5a-b339-ab92beb7c781" />
+
+
 # ⭐ Step 3 — Create Lambda Function: GenerateUploadUrl (S3 Pre-Signed Uploads)
 
  - This Lambda function generates a secure pre-signed URL so the user can upload photos directly to S3 without exposing your AWS keys.
@@ -157,6 +167,11 @@ Choose:
 - Architecture: x86_64
 - Permissions: Create new role with basic Lambda permissions
 ```
+
+**📸 Lambda function creation Screenshot**
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f3e47ae4-8d1d-4257-8c6d-5b7ee8dc9954" />
+
 # 🟢 2️⃣ Add Environment Variable
 
 Go to:
