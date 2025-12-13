@@ -309,6 +309,10 @@ Save.
 
 ---
 
+ **📸 Environment variable  Screenshot**
+
+<img width="1073" height="377" alt="Image" src="https://github.com/user-attachments/assets/8659e2af-2e03-4e41-bbd6-489fbb0858a1" />
+
 ## 🟢 3️⃣ Paste Lambda Code
 
 ```python
@@ -397,7 +401,12 @@ Report ID: {report_id}
         "body": json.dumps({"reportId": report_id})
     }
 ```
-Click **Deploy**.
+Click **Deploy**. 
+
+ **📸 Lambda code Screenshot**
+ 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/736d3714-7c18-438e-adea-47f14e79a9de" />
+
 
 # 🟢 4️⃣ Add Permissions to Lambda Role
 
@@ -412,7 +421,11 @@ Attach these policies:
 
 -  **AmazonSESFullAccess**
 
-Your CreateReport Lambda is now ready. 
+Your CreateReport Lambda is now ready.
+
+ **📸 Iam role for create report Screenshot**
+ 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/495d4f63-d3cc-4578-a652-d645fcce2227" />
 
 # ⭐ Step 5 — Configure API Gateway (POST /upload-url & POST /reports)
 
@@ -436,6 +449,10 @@ Settings:
 
 Click **Create API**.
 
+ **📸 Api Creation Screenshot**
+ 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/68cb24fe-f163-4202-9045-a0cb96b3ca2d" /> 
+
 ---
 
 ## 🟢 2️⃣ Create Resource: /upload-url
@@ -451,6 +468,10 @@ Enable CORS: **YES**
 Click **Create Resource**.
 
 ---
+
+ **📸 Upload Resource Creation Screenshot**
+ 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/cf030e56-4678-4623-b5f0-6004dcbe2a8b" />
 
 ## 🟢 3️⃣ Add POST Method to /upload-url
 Select **/upload-url** → Actions → Create Method → POST
@@ -492,6 +513,10 @@ Enable CORS: **YES**
 
 Click **Create Resource**.
 
+ **📸 report resource creation Screenshot**
+ 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/34c27ff2-836f-43f9-9052-9e4767501418" />
+ 
 ---
 
 ## 🟢 6️⃣ Add POST Method to /reports
@@ -525,6 +550,8 @@ Choose:
 ```
 const API_BASE_URL = "https://YOUR_API_ID.execute-api.ap-south-1.amazonaws.com/prod";
 ```
+ **📸 Deploy api Screenshot** 
+ 
 
 # ⭐ Step 7 — Host Frontend on S3 (Static Website Hosting)
 
@@ -535,7 +562,12 @@ const API_BASE_URL = "https://YOUR_API_ID.execute-api.ap-south-1.amazonaws.com/p
 
 - Now we enable static website hosting and upload the frontend files.
 
----
+--- 
+
+**📸 Enable Static website screenshot**
+
+<img width="1408" height="312" alt="Image" src="https://github.com/user-attachments/assets/26e91e8f-0b48-4790-898f-f9bc56f251ed" />
+
 
 ## 🟢 1️⃣ Enable Static Website Hosting
 
@@ -564,6 +596,10 @@ http://click-clean-frontend.s3-website.ap-south-1.amazonaws.com
 ```
 
 ---
+**📸  Static website config screenshot**
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/580de310-4712-4005-bdc4-e8646e247e62" />
+
 
 ## 🟢 2️⃣ Upload Frontend Files
 
@@ -582,6 +618,10 @@ Go to:
 - Click Upload.
 
 ---
+**📸  Frontend s3 upload files  screenshot**
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e049063d-55a2-4172-b71c-8f65ede54b2c" />
+
 # ⭐ STEP 10 — Verify Waste Reports in DynamoDB
 
 Open:
@@ -614,7 +654,9 @@ http://click-clean-frontend.s3-website.ap-south-1.amazonaws.com/
  After submitting:
 - Refresh the DynamoDB table → A new item should appear automatically.
 
----
+--- 
+
+
 
 # ⭐ STEP 11 — Verify S3 Uploaded Images
 
@@ -655,6 +697,9 @@ Note:
 ✔ Email notifications sent via SES  
 
 ---
+**📹Project Working Successfully**
+
+https://github.com/user-attachments/assets/eb4e8bdd-d1aa-4298-a72f-3528523ac3a1
 
 👨‍💻 Author  
 **Vinit Tippanawar**  
