@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click &amp; Clean – Waste Reporting System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Click &amp; Clean</h1>
+      <p>Report waste issues in your area and help keep your city clean.</p>
+    </header>
+
+    <section class="quote-bar">
+      <p id="quoteText"></p>
+    </section>
+
+    <main>
+      <form id="reportForm">
+        <section class="card">
+          <h2>Location Details</h2>
+          <div class="field">
+            <label for="city">City<span>*</span></label>
+            <input id="city" name="city" type="text" required placeholder="e.g., Pune">
+          </div>
+          <div class="field">
+            <label for="area">Area / Landmark<span>*</span></label>
+            <input id="area" name="area" type="text" required placeholder="e.g., Near ABC Chowk">
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label for="lat">Latitude (optional)</label>
+              <input id="lat" name="lat" type="number" step="0.000001" placeholder="18.5204">
+            </div>
+            <div class="field">
+              <label for="lng">Longitude (optional)</label>
+              <input id="lng" name="lng" type="number" step="0.000001" placeholder="73.8567">
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Waste Details</h2>
+          <div class="field">
+            <label for="wasteType">Type of Waste<span>*</span></label>
+            <select id="wasteType" name="wasteType" required>
+              <option value="">Select type</option>
+              <option value="Garbage">Garbage</option>
+              <option value="Construction">Construction debris</option>
+              <option value="Industrial">Industrial waste</option>
+              <option value="E-waste">E-waste</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="urgency">Urgency Level<span>*</span></label>
+            <select id="urgency" name="urgency" required>
+              <option value="">Select urgency</option>
+              <option value="LOW">Low</option>
+              <option value="MEDIUM">Medium</option>
+              <option value="HIGH">High</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="description">Description<span>*</span></label>
+            <textarea id="description" name="description" rows="4" required
+              placeholder="Describe the problem..."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="photo">Upload Photo / Video<span>*</span></label>
+            <input id="photo" name="photo" type="file" accept="image/*,video/*" required>
+            <small>Max ~5–10 MB recommended. Actual limit depends on your S3/Lambda config.</small>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Your Contact (for follow-up)</h2>
+          <div class="field">
+            <label for="contactEmail">Email</label>
+            <input id="contactEmail" name="contactEmail" type="email" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="contactPhone">Phone (optional)</label>
+            <input id="contactPhone" name="contactPhone" type="tel" placeholder="+91XXXXXXXXXX">
+          </div>
+        </section>
+
+        <div class="actions">
+          <button type="submit" id="submitBtn">Submit Report</button>
+        </div>
+
+        <div id="status" class="status"></div>
+      </form>
+
+      <section class="card credits-card">
+        <h2>Credits &amp; Rewards</h2>
+        <p class="credits-intro">Earn credits each time you report a genuine waste issue. Redeem your credits for amazing digital rewards.</p>
+        <ul class="credits-list">
+          <li><strong>10 credits</strong> – 1 month YouTube Premium</li>
+          <li><strong>10 credits</strong> – 1 month Spotify Premium</li>
+          <li><strong>New rewards</strong> – Coming soon...</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Click &amp; Clean – Waste Reporting System</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
