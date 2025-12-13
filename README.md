@@ -264,8 +264,9 @@ Attach:
 ```
 AmazonS3FullAccess
 ```
+**📸 lambda iam role for genrateuploadurl  Screenshot**
 
-**📸 lambda code for genrateuploadurl  Screenshot**
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/6809f11d-1e06-45f2-800c-023fa6bd8cd3" />
 
 
 # ⭐ Step 4 — Create Lambda Function: CreateReport (Store Report + Send Email)
@@ -286,6 +287,10 @@ Use:
 - Permissions: Create new role with basic Lambda permissions  
 
 ---
+**📸 lambda function CreateReport  Screenshot**
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/dd7807fb-e917-484a-af07-1b54851935fe" />
+
 
 ## 🟢 2️⃣ Add Environment Variables
 Go to:
