@@ -516,7 +516,7 @@ Set:
 ```
 - Index document: index.html
 
-- Error document: index.html
+- Error document: error.html (optional)
 ```
 
 Save.
