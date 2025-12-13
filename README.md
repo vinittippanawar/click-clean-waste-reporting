@@ -672,7 +672,7 @@ Open:
 
 ---
 
-⭐ STEP 12 — Verify Email Notifications (SES)
+# ⭐ STEP 12 — Verify Email Notifications (SES)
 
  ✔ Admin Email  
 - You should receive an email with subject:
@@ -705,7 +705,7 @@ https://github.com/user-attachments/assets/eb4e8bdd-d1aa-4298-a72f-3528523ac3a1
 **Vinit Tippanawar**  
  AWS | Cloud | DevOps  
 
-**If this repo helped you, smash that ⭐ button!*  
-**Your support = more real-world AWS projects coming soon 🚀*
+*If this repo helped you, smash that ⭐ button!*  
+*Your support = more real-world AWS projects coming soon 🚀*
 
 
