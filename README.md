@@ -545,18 +545,18 @@ Go to:
 - Click Upload.
 
 ---
-⭐ STEP 10 — Verify Waste Reports in DynamoDB
+# ⭐ STEP 10 — Verify Waste Reports in DynamoDB
 
 Open:
-AWS Console → DynamoDB → Tables → WasteReports
+- AWS Console → DynamoDB → Tables → WasteReports
 
 Click:
-Explore items
+- Explore items
 
-You should see waste reports created from the frontend submission.
+- You should see waste reports created from the frontend submission.
 
 Example item:
-
+```
 {
   "reportId": "b3c1d9c4-8f21-4b77-9f2a-123456abcd",
   "city": "Pune",
@@ -568,46 +568,47 @@ Example item:
   "status": "Pending",
   "timestamp": 1733840000
 }
-
-Go to your live frontend and submit a new waste report:
-
+```
+- Go to your live frontend and submit a new waste report:
+```
 http://click-clean-frontend.s3-website.ap-south-1.amazonaws.com/
+```
 
-After submitting:
-Refresh the DynamoDB table → A new item should appear automatically.
+ After submitting:
+- Refresh the DynamoDB table → A new item should appear automatically.
 
 ---
 
-⭐ STEP 11 — Verify S3 Uploaded Images
+# ⭐ STEP 11 — Verify S3 Uploaded Images
 
 Open:
-AWS Console → S3 → click-and-clean-uploads → reports/
+- AWS Console → S3 → click-and-clean-uploads → reports/
 
-You should see the uploaded image file used during report submission.
+- You should see the uploaded image file used during report submission.
 
 Example:
-reports/garbage.jpg
+**reports/garbage.jpg**
 
-This confirms the pre-signed URL upload is working correctly.
+- This confirms the pre-signed URL upload is working correctly.
 
 ---
 
 ⭐ STEP 12 — Verify Email Notifications (SES)
 
-✔ Admin Email  
-You should receive an email with subject:
-New Waste Report #REPORT_ID
+ ✔ Admin Email  
+- You should receive an email with subject:
+- New Waste Report #REPORT_ID
 
 ✔ User Email (if provided)  
-User should receive:
-Report Received (REPORT_ID)
+- User should receive:
+- Report Received (REPORT_ID)
 
 Note:
-Emails may land in the **Spam folder** for Gmail.
+- Emails may land in the **Spam folder** for Gmail.
 
 ---
 
-🎉 Project Working Successfully
+🎉 **Project Working Successfully**
 
 ✔ Frontend loads from S3  
 ✔ Image uploads to S3 using pre-signed URL  
@@ -619,10 +620,10 @@ Emails may land in the **Spam folder** for Gmail.
 ---
 
 👨‍💻 Author  
-Vinit Tippanawar  
-AWS | Cloud | DevOps  
+**Vinit Tippanawar**  
+ AWS | Cloud | DevOps  
 
-If this repo helped you, smash that ⭐ button!  
-Your support = more real-world AWS projects coming soon 🚀
+**If this repo helped you, smash that ⭐ button!*  
+**Your support = more real-world AWS projects coming soon 🚀*
 
 
