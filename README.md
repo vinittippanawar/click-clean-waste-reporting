@@ -46,6 +46,10 @@ Enable:
 - **Static website hosting**
 - **Public read access**
 
+**📸 S3 Frontend Screenshot**
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/46e9370c-8384-4abe-827f-e0514be295a2" />
+
 ## 🟢 2) S3 Bucket for Photo Uploads
 
 - This bucket stores uploaded waste images using pre-signed URLs.
