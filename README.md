@@ -528,31 +528,7 @@ http://click-clean-frontend.s3-website.ap-south-1.amazonaws.com
 
 ---
 
-## 🟢 2️⃣ Add Public Read Policy
-
-Go to:
-
-Permissions → Bucket Policy → Edit
-
-
-Paste this:
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::click-clean-frontend/*"
-    }
-  ]
-}
-```
-Save. 
-
-🟢 3️⃣ Upload Frontend Files
+## 🟢 2️⃣ Upload Frontend Files
 
 Go to:
 
@@ -568,7 +544,7 @@ Go to:
 
 - Click Upload.
 
-🟢 4️⃣ Test Your Live Website
+## 🟢 3️⃣ Test Your Live Website
 
 Open:
 ```
