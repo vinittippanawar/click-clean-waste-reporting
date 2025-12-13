@@ -31,6 +31,10 @@ DynamoDB (WasteReports table)
 SES (Admin + User Emails)
 ```
 
+**📸  Architecture Image**
+
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/4939caa2-1478-4567-895d-22f24aca28ff" />
+
 # ⭐ Step 1 — Create S3 Buckets (Frontend + File Uploads)
 
 You need **two S3 buckets** for this project:
